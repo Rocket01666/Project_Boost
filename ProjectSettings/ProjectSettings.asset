@@ -520,7 +520,11 @@ PlayerSettings:
   webGLCompressionFormat: 1
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: Canisters
+    7: Canisters
+    13: Canisters
+    14: Canisters
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
