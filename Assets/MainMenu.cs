@@ -6,6 +6,15 @@ using UnityEngine.Audio;
 
 public class MainMenu : MonoBehaviour
 {
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //Save stuff
+            SceneManager.LoadScene("Menu");
+        }
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -28,3 +37,4 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 }
+
