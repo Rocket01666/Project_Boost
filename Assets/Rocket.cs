@@ -24,6 +24,8 @@ public class Rocket : MonoBehaviour
 
     enum State { Alive, Dying, Transcending }
     State state = State.Alive;
+
+    bool collisionsDisabled = false;
     private float GetActiveScene;
 
     // Start is called before the first frame update
@@ -41,11 +43,27 @@ public class Rocket : MonoBehaviour
             RespondToRotateInput();
             RespondToThrustInput();
         }
+        if (Debug.isDebugBuild)
+        {
+            RespondToDebugInput();
+        }
+    }
+
+    void RespondToDebugInput()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C));
+        {
+            collisionsDisabled = !collisionsDisabled; //toggle
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (state != State.Alive)
+        if (state != State.Alive || collisionsDisabled)
         {
             return;
         }
