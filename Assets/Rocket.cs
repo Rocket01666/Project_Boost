@@ -55,7 +55,7 @@ public class Rocket : MonoBehaviour
         {
             LoadNextLevel();
         }
-        else if (Input.GetKeyDown(KeyCode.C));
+        else if (Input.GetKeyDown(KeyCode.C))
         {
             collisionsDisabled = !collisionsDisabled; //toggle
         }
