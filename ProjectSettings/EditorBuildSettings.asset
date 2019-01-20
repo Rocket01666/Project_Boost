@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Menu.unity
     guid: cf60790dff979eb4a8a5d83f63a9c92f
   - enabled: 1
+    path: Assets/Levels/Original/Learncontrols.unity
+    guid: ae5071db074051f429090800a9500646
+  - enabled: 1
+    path: Assets/Levels/Original/LearnGravity.unity
+    guid: 7a61f4eba7e24f842a02d24d01d6bc26
+  - enabled: 1
     path: Assets/Levels/Original/Level 1.unity
     guid: 176d6981096b0014cac23fcb4db67830
   - enabled: 1

@@ -106,24 +106,32 @@ public class Rocket : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        {
+            nextSceneIndex = 0;
+        }
+        SceneManager.LoadScene(nextSceneIndex);
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //this is old code 
     }
 
     private void RespondToRotateInput()
     {
-        rigidBody.freezeRotation = true;
-
         float rotationThisFrame = rcsThrust * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
         {
+            rigidBody.freezeRotation = true;
             transform.Rotate(Vector3.forward * rotationThisFrame);
+            rigidBody.freezeRotation = false;
         }
         else if (Input.GetKey(KeyCode.D))
         {
+            rigidBody.freezeRotation = true;
             transform.Rotate(-Vector3.forward * rotationThisFrame);
+            rigidBody.freezeRotation = false;
         }
-
-        rigidBody.freezeRotation = false;
     }
 
     private void RespondToThrustInput()
